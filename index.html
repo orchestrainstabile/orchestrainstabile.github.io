@@ -63,9 +63,18 @@
 
         /* Hero / Copertina */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(18, 18, 18, 1)), #222;
-            padding: 90px 20px 70px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(18, 18, 18, 1)), #1a1a1a;
+            padding: 60px 20px 50px 20px;
             text-align: center;
+        }
+        .hero-img {
+            max-width: 100%;
+            width: 850px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+            margin-bottom: 25px;
+            border: 2px solid #333;
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -76,7 +85,7 @@
             font-size: 1.2rem;
             color: #aaa;
             max-width: 700px;
-            margin: 0 auto 1.5rem auto;
+            margin: 0 auto;
         }
 
         /* Sezioni Contenuto */
@@ -108,6 +117,30 @@
             margin-bottom: 1rem;
             font-size: 1.05rem;
             color: #ccc;
+        }
+
+        /* Sezione Formazione / Band */
+        .band-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .band-member {
+            background: #1a1a1a;
+            padding: 15px 20px;
+            border-radius: 6px;
+            border-left: 3px solid #f39c12;
+        }
+        .band-member strong {
+            color: #fff;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .band-member span {
+            color: #aaa;
+            font-size: 0.95rem;
         }
 
         /* Sezione Musica & Video */
@@ -261,6 +294,7 @@
             <div class="logo">GIOI <span>| Orchestra Instabile</span></div>
             <ul>
                 <li><a href="#bio">Biografia</a></li>
+                <li><a href="#formazione">Formazione</a></li>
                 <li><a href="#musica">Musica & Video</a></li>
                 <li><a href="#concerti">Concerti</a></li>
                 <li><a href="#contatti">Contatti</a></li>
@@ -270,6 +304,9 @@
 
     <!-- Hero / Copertina -->
     <div class="hero">
+        <!-- Foto principale in apertura (sostituisci banda.jpg con il nome del tuo file immagine) -->
+        <img src="banda.jpg" alt="Giancarlo Iori e l'Orchestra Instabile" class="hero-img">
+        
         <h1>Giancarlo Iori e l'Orchestra Instabile</h1>
         <p>Progressive Folk, repertorio d'autore e musica d'ascolto.</p>
     </div>
@@ -280,6 +317,45 @@
         <div class="bio-content">
             <p><strong>Giancarlo Iori e l'Orchestra Instabile (GIOI)</strong> è un progetto musicale dinamico che intreccia le sonorità del folk-prog, i classici della canzone d'autore italiana — con una cura particolare per l'opera di Fabrizio De André — e composizioni originali.</p>
             <p>Caratterizzato da una formazione aperta ed eclettica che spazia dal trio alle grandi orchestrazioni a otto elementi, l'ensemble unisce la ricchezza di strumenti acustici, fiati, fisarmonica e violino alla modernità dei sintetizzatori, creando atmosfere suggestive e arrangiamenti mai banali.</p>
+        </div>
+    </section>
+
+    <!-- Formazione della Band -->
+    <section id="formazione">
+        <h2>Formazione</h2>
+        <div class="band-grid">
+            <div class="band-member">
+                <strong>Giancarlo Iori</strong>
+                <span>Chitarra, bouzouki, violino e voce</span>
+            </div>
+            <div class="band-member">
+                <strong>Guido Gabet</strong>
+                <span>Chitarra e voce</span>
+            </div>
+            <div class="band-member">
+                <strong>Fabio Speroni</strong>
+                <span>Batteria e percussioni</span>
+            </div>
+            <div class="band-member">
+                <strong>Valerio Iori</strong>
+                <span>Basso e voce</span>
+            </div>
+            <div class="band-member">
+                <strong>Lucia Iori</strong>
+                <span>Voce</span>
+            </div>
+            <div class="band-member">
+                <strong>Daniele Mesiti</strong>
+                <span>Tastiere, fisarmonica e voce</span>
+            </div>
+            <div class="band-member">
+                <strong>Salvatore Pittà</strong>
+                <span>Sax</span>
+            </div>
+            <div class="band-member">
+                <strong>Enrico Badaracco</strong>
+                <span>Tromba</span>
+            </div>
         </div>
     </section>
 
