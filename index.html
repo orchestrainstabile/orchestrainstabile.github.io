@@ -64,7 +64,7 @@
         /* Hero / Copertina */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(18, 18, 18, 1)), #222;
-            padding: 100px 20px;
+            padding: 90px 20px 70px 20px;
             text-align: center;
         }
         .hero h1 {
@@ -110,6 +110,48 @@
             color: #ccc;
         }
 
+        /* Sezione Musica & Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rapporto 16:9 per rendere il video fluido */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            margin-bottom: 2rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .youtube-actions {
+            text-align: center;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .btn-youtube {
+            display: inline-block;
+            background-color: #cc181e;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .btn-youtube:hover {
+            background-color: #e52d27;
+            color: #ffffff;
+        }
+
         /* Sezione Concerti / Date */
         .tour-list {
             list-style: none;
@@ -150,8 +192,22 @@
             text-align: center;
         }
         .contact-box p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             font-size: 1.1rem;
+        }
+        .contact-details {
+            margin: 20px 0;
+            font-size: 1.15rem;
+        }
+        .contact-details p {
+            margin-bottom: 0.8rem;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
         .btn-contact {
             display: inline-block;
@@ -160,7 +216,7 @@
             padding: 12px 25px;
             font-weight: bold;
             border-radius: 4px;
-            margin-top: 10px;
+            transition: background 0.3s, color 0.3s;
         }
         .btn-contact:hover {
             background: #e67e22;
@@ -176,12 +232,13 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive per cellulari */
+        /* Responsive per dispositivi mobili */
         @media (max-width: 768px) {
             nav { flex-direction: column; gap: 1rem; }
             .hero h1 { font-size: 1.8rem; }
             .tour-item { flex-direction: column; align-items: flex-start; gap: 8px; }
             .tour-venue { padding: 0; }
+            .btn-group { flex-direction: column; }
         }
     </style>
 </head>
@@ -193,6 +250,7 @@
             <div class="logo">GIOI <span>| Orchestra Instabile</span></div>
             <ul>
                 <li><a href="#bio">Biografia</a></li>
+                <li><a href="#musica">Musica & Video</a></li>
                 <li><a href="#concerti">Concerti</a></li>
                 <li><a href="#contatti">Contatti</a></li>
             </ul>
@@ -214,6 +272,31 @@
         </div>
     </section>
 
+    <!-- Sezione Musica & YouTube -->
+    <section id="musica">
+        <h2>Musica & Video</h2>
+        <p style="margin-bottom: 20px; color: #ccc;">Guarda una delle nostre esecuzioni dal vivo:</p>
+        
+        <!-- Video in Evidenza (Sostituisci ID_VIDEO_YOUTUBE con l'ID reale del video) -->
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/BwksgCd-CX0" 
+                title="Giancarlo Iori e l'Orchestra Instabile - Live" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Box Invito al Canale YouTube -->
+        <div class="youtube-actions">
+            <p>Vuoi ascoltare altri brani ed esecuzioni dal vivo del nostro repertorio?</p>
+            <!-- Sostituisci NOME_CANALE con il nickname/URL del vostro canale YouTube -->
+            <a href="https://www.youtube.com/@gi-oi" target="_blank" class="btn-youtube">
+                Visita il canale YouTube Ufficiale
+            </a>
+        </div>
+    </section>
+
     <!-- Date Concerti -->
     <section id="concerti">
         <h2>Prossimi Concerti</h2>
@@ -225,14 +308,6 @@
                 <span class="tour-city">--</span>
             </li>
 
-            <!-- Esempio di riga concerto (sostituisci o aggiungi date):
-            <li class="tour-item">
-                <span class="tour-date">27 Luglio 2026</span>
-                <div class="tour-venue">Piazza Utama</div>
-                <span class="tour-city">Castel Madama (RM)</span>
-            </li>
-            -->
-
         </ul>
     </section>
 
@@ -241,9 +316,16 @@
         <h2>Contatti & Booking</h2>
         <div class="contact-box">
             <p>Per informazioni su concerti, organizzazione eventi e disponibilità delle formazioni (dal trio all'ottetto):</p>
-            <p><strong>Email:</strong> orchestra.instabile@gmail.com</p>
-            <p><strong>Telefono / WhatsApp:</strong> +39 349 6824095</p>
-            <a href="mailto:info@orchestrainstabile.it" class="btn-contact">Invia una Mail</a>
+            
+            <div class="contact-details">
+                <p><strong>Email:</strong> <a href="mailto:orchestra.instabile@gmail.com">orchestra.instabile@gmail.com</a></p>
+                <p><strong>Telefono / WhatsApp:</strong> <a href="tel:+393496824095">+39 349 6824095</a></p>
+            </div>
+
+            <div class="btn-group">
+                <a href="mailto:orchestra.instabile@gmail.com" class="btn-contact">Invia una Mail</a>
+                <a href="tel:+393496824095" class="btn-contact">Chiama Ora</a>
+            </div>
         </div>
     </section>
 
