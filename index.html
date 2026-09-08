@@ -3,32 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giancarlo Iori e l'Orchestra Instabile (GIOI)</title>
+    <title>Giancarlo Iori e l'Orchestra Instabile (GIOI) - Sito Ufficiale</title>
     <style>
-        body { 
-            font-family: 'Helvetica Neue', Arial, sans-serif; 
-            background-color: #121212; 
-            color: #f4f4f4; 
-            text-align: center; 
-            padding: 40px 20px; 
+        /* Stili Generali e Reset */
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
         }
-        h1 { color: #e67e22; margin-bottom: 10px; }
-        h2 { font-weight: 300; color: #ccc; margin-top: 0; }
-        p { font-size: 1.1em; line-height: 1.6; max-width: 600px; margin: 20px auto; }
-        .footer { margin-top: 50px; font-size: 0.9em; color: #777; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        a {
+            color: #f39c12;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #e67e22;
+        }
+
+        /* Header / Navigazione */
+        header {
+            background-color: #1a1a1a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #f39c12;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Hero / Copertina */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(18, 18, 18, 1)), #222;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        /* Sezioni Contenuto */
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            border-bottom: 1px solid #222;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #f39c12;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #f39c12;
+            margin-top: 8px;
+        }
+
+        /* Sezione Biografia */
+        .bio-content p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #ccc;
+        }
+
+        /* Sezione Concerti / Date */
+        .tour-list {
+            list-style: none;
+        }
+        .tour-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: #1a1a1a;
+            padding: 18px 25px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #f39c12;
+        }
+        .tour-date {
+            font-weight: bold;
+            color: #fff;
+            min-width: 140px;
+        }
+        .tour-venue {
+            flex-grow: 1;
+            padding: 0 15px;
+            color: #bbb;
+        }
+        .tour-city {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Sezione Contatti */
+        .contact-box {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact-box p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .btn-contact {
+            display: inline-block;
+            background: #f39c12;
+            color: #121212;
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .btn-contact:hover {
+            background: #e67e22;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #0a0a0a;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive per cellulari */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .tour-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .tour-venue { padding: 0; }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Giancarlo Iori e l'Orchestra Instabile</h1>
-    <h2>(GIOI)</h2>
+    <!-- Navigazione -->
+    <header>
+        <nav>
+            <div class="logo">GIOI <span>| Orchestra Instabile</span></div>
+            <ul>
+                <li><a href="#bio">Biografia</a></li>
+                <li><a href="#concerti">Concerti</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <p>Benvenuti sul sito ufficiale. A breve saranno disponibili la biografia, le date dei prossimi concerti e l'ascolto dei brani.</p>
-
-    <div class="footer">
-        &copy; Giancarlo Iori e l'Orchestra Instabile
+    <!-- Hero / Copertina -->
+    <div class="hero">
+        <h1>Giancarlo Iori e l'Orchestra Instabile</h1>
+        <p>Progressive Folk, repertorio d'autore e musica d'ascolto.</p>
     </div>
+
+    <!-- Biografia -->
+    <section id="bio">
+        <h2>Biografia</h2>
+        <div class="bio-content">
+            <p><strong>Giancarlo Iori e l'Orchestra Instabile (GIOI)</strong> è un progetto musicale dinamico che intreccia le sonorità del folk-prog, i classici della canzone d'autore italiana — con una cura particolare per l'opera di Fabrizio De André — e composizioni originali.</p>
+            <p>Caratterizzato da una formazione aperta ed eclettica che spazia dal trio alle grandi orchestrazioni a otto elementi, l'ensemble unisce la ricchezza di strumenti acustici, fiati, fisarmonica e violino alla modernità dei sintetizzatori, creando atmosfere suggestive e arrangiamenti mai banali.</p>
+        </div>
+    </section>
+
+    <!-- Date Concerti -->
+    <section id="concerti">
+        <h2>Prossimi Concerti</h2>
+        <ul class="tour-list">
+            
+            <li class="tour-item">
+                <span class="tour-date">Prossimamente</span>
+                <div class="tour-venue">Nuove date in fase di definizione</div>
+                <span class="tour-city">--</span>
+            </li>
+
+            <!-- Esempio di riga concerto (sostituisci o aggiungi date):
+            <li class="tour-item">
+                <span class="tour-date">27 Luglio 2026</span>
+                <div class="tour-venue">Piazza Utama</div>
+                <span class="tour-city">Castel Madama (RM)</span>
+            </li>
+            -->
+
+        </ul>
+    </section>
+
+    <!-- Contatti e Booking -->
+    <section id="contatti">
+        <h2>Contatti & Booking</h2>
+        <div class="contact-box">
+            <p>Per informazioni su concerti, organizzazione eventi e disponibilità delle formazioni (dal trio all'ottetto):</p>
+            <p><strong>Email:</strong> info@orchestrainstabile.it</p>
+            <p><strong>Telefono / WhatsApp:</strong> +39 333 0000000</p>
+            <a href="mailto:info@orchestrainstabile.it" class="btn-contact">Invia una Mail</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Giancarlo Iori e l'Orchestra Instabile (GIOI). Tutti i diritti riservati.</p>
+    </footer>
 
 </body>
 </html>
