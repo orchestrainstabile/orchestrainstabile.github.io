@@ -113,7 +113,7 @@
         /* Sezione Musica & Video */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* Rapporto 16:9 per rendere il video fluido */
+            padding-bottom: 56.25%; /* Rapporto 16:9 */
             height: 0;
             overflow: hidden;
             max-width: 100%;
@@ -187,17 +187,19 @@
             background: #1a1a1a;
             padding: 30px;
             border-radius: 8px;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             text-align: center;
         }
         .contact-box p {
-            margin-bottom: 1.2rem;
-            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
         }
         .contact-details {
-            margin: 20px 0;
-            font-size: 1.15rem;
+            margin: 25px 0;
+            font-size: 1.1rem;
+            text-align: left;
+            display: inline-block;
         }
         .contact-details p {
             margin-bottom: 0.8rem;
@@ -229,7 +231,8 @@
             padding: 30px 20px;
             background: #0a0a0a;
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
 
         /* Responsive per dispositivi mobili */
@@ -275,24 +278,23 @@
     <!-- Sezione Musica & YouTube -->
     <section id="musica">
         <h2>Musica & Video</h2>
-        <p style="margin-bottom: 20px; color: #ccc;">Guarda una delle nostre esecuzioni dal vivo:</p>
+        <p style="margin-bottom: 20px; color: #ccc;">Ascolta uno dei nostri brani dal vivo, <strong>"Cantala mo"</strong>:</p>
         
-        <!-- Video in Evidenza (Sostituisci ID_VIDEO_YOUTUBE con l'ID reale del video) -->
+        <!-- Video YouTube "Cantala mo" -->
         <div class="video-container">
             <iframe 
                 src="https://www.youtube.com/embed/BwksgCd-CX0" 
-                title="Giancarlo Iori e l'Orchestra Instabile - Live" 
+                title="Giancarlo Iori e l'Orchestra Instabile - Cantala mo" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
 
-        <!-- Box Invito al Canale YouTube -->
+        <!-- Box Invito al Canale YouTube @gi-oi -->
         <div class="youtube-actions">
             <p>Vuoi ascoltare altri brani ed esecuzioni dal vivo del nostro repertorio?</p>
-            <!-- Sostituisci NOME_CANALE con il nickname/URL del vostro canale YouTube -->
             <a href="https://www.youtube.com/@gi-oi" target="_blank" class="btn-youtube">
-                Visita il canale YouTube Ufficiale
+                Visita il canale YouTube @gi-oi
             </a>
         </div>
     </section>
@@ -318,8 +320,9 @@
             <p>Per informazioni su concerti, organizzazione eventi e disponibilità delle formazioni (dal trio all'ottetto):</p>
             
             <div class="contact-details">
-                <p><strong>Email:</strong> <a href="mailto:orchestra.instabile@gmail.com">orchestra.instabile@gmail.com</a></p>
-                <p><strong>Telefono / WhatsApp:</strong> <a href="tel:+393496824095">+39 349 6824095</a></p>
+                <p>📍 <strong>Sede & Area operativa:</strong> Via D. Guerrazzi, 22 - 00012 Villanova di Guidonia (RM) <br><small style="color: #999;">(Attivi principalmente in Italia Centrale)</small></p>
+                <p>✉️ <strong>Email:</strong> <a href="mailto:orchestra.instabile@gmail.com">orchestra.instabile@gmail.com</a></p>
+                <p>📞 <strong>Telefono / WhatsApp:</strong> <a href="tel:+393496824095">+39 349 6824095</a></p>
             </div>
 
             <div class="btn-group">
@@ -332,6 +335,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; Giancarlo Iori e l'Orchestra Instabile (GIOI). Tutti i diritti riservati.</p>
+        <p style="margin-top: 5px; color: #555;">Via D. Guerrazzi, 22 - 00012 Villanova di Guidonia (RM)</p>
     </footer>
 
 </body>
