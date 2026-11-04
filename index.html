@@ -475,7 +475,24 @@
         <p>&copy; Giancarlo Iori e l'Orchestra Instabile (GIOI). Tutti i diritti riservati.</p>
         <p style="margin-top: 5px; color: #555;">Via D. Guerrazzi, 22 - 00012 Villanova di Guidonia (RM)</p>
         <p style="margin-top: 5px;"><a href="https://www.facebook.com/GruppoGIOI" target="_blank" style="color: #1877f2;">Seguici su Facebook</a></p>
+        
+        <!-- Contatore di visite discreto -->
+        <p style="margin-top: 15px; font-size: 0.8rem; color: #666;">
+            Visite al sito: <span id="visit-count" style="color: #f39c12;">...</span>
+        </p>
     </footer>
+
+    <!-- Script per il contatore di visite -->
+    <script>
+        fetch('https://api.counterapi.dev/v1/orchestrainstabile/visite/up')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('visit-count').innerText = data.count;
+            })
+            .catch(error => {
+                document.getElementById('visit-count').innerText = "N/D";
+            });
+    </script>
 
 </body>
 </html>
