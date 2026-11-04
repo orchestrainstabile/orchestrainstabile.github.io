@@ -54,10 +54,11 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 1.2rem;
+            flex-wrap: wrap;
         }
         nav a {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
         }
 
@@ -143,6 +144,31 @@
             font-size: 0.95rem;
         }
 
+        /* Sezione Audio Player */
+        .audio-grid {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .audio-card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .audio-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        audio {
+            width: 100%;
+            margin-top: 5px;
+        }
+
         /* Sezione Musica & Video */
         .video-container {
             position: relative;
@@ -203,7 +229,7 @@
         .tour-date {
             font-weight: bold;
             color: #fff;
-            min-width: 140px;
+            min-width: 160px;
         }
         .tour-venue {
             flex-grow: 1;
@@ -295,7 +321,8 @@
             <ul>
                 <li><a href="#bio">Biografia</a></li>
                 <li><a href="#formazione">Formazione</a></li>
-                <li><a href="#musica">Musica & Video</a></li>
+                <li><a href="#audio">Ascolta</a></li>
+                <li><a href="#musica">Video</a></li>
                 <li><a href="#concerti">Concerti</a></li>
                 <li><a href="#contatti">Contatti</a></li>
             </ul>
@@ -304,9 +331,7 @@
 
     <!-- Hero / Copertina -->
     <div class="hero">
-        <!-- Foto principale in apertura (sostituisci banda.jpg con il nome del tuo file immagine) -->
         <img src="banda.jpg" alt="Giancarlo Iori e l'Orchestra Instabile" class="hero-img">
-        
         <h1>Giancarlo Iori e l'Orchestra Instabile</h1>
         <p>Progressive Folk, repertorio d'autore e musica d'ascolto.</p>
     </div>
@@ -359,12 +384,38 @@
         </div>
     </section>
 
+    <!-- NUOVA SEZIONE: Ascolta i Brani Audio -->
+    <section id="audio">
+        <h2>Ascolta i Brani</h2>
+        <p style="margin-bottom: 20px; color: #ccc;">Una selezione di tracce audio registrate dall'ensemble:</p>
+        
+        <div class="audio-grid">
+            <!-- Brano 1 -->
+            <div class="audio-card">
+                <span class="audio-title">Cantala mo (Live / Studio)</span>
+                <!-- Sostituisci "audio/cantala-mo.mp3" con il percorso reale del file caricato -->
+                <audio controls>
+                    <source src="audio/cantala-mo.mp3" type="audio/mpeg">
+                    Il tuo browser non supporta l'elemento audio.
+                </audio>
+            </div>
+
+            <!-- Brano 2 (Puoi duplicare questo blocco per aggiungere altri brani) -->
+            <div class="audio-card">
+                <span class="audio-title">Titolo Secondo Brano</span>
+                <audio controls>
+                    <source src="audio/nome-file-2.mp3" type="audio/mpeg">
+                    Il tuo browser non supporta l'elemento audio.
+                </audio>
+            </div>
+        </div>
+    </section>
+
     <!-- Sezione Musica & YouTube -->
     <section id="musica">
-        <h2>Musica & Video</h2>
-        <p style="margin-bottom: 20px; color: #ccc;">Ascolta uno dei nostri brani dal vivo, <strong>"Cantala mo"</strong>:</p>
+        <h2>Video dal Vivo</h2>
+        <p style="margin-bottom: 20px; color: #ccc;">Guarda una delle nostre esecuzioni dal vivo, <strong>"Cantala mo"</strong>:</p>
         
-        <!-- Video YouTube "Cantala mo" -->
         <div class="video-container">
             <iframe 
                 src="https://www.youtube.com/embed/BwksgCd-CX0" 
@@ -374,7 +425,6 @@
             </iframe>
         </div>
 
-        <!-- Box Invito al Canale YouTube @gi-oi -->
         <div class="youtube-actions">
             <p>Vuoi ascoltare altri brani ed esecuzioni dal vivo del nostro repertorio?</p>
             <a href="https://www.youtube.com/@gi-oi" target="_blank" class="btn-youtube">
@@ -389,9 +439,9 @@
         <ul class="tour-list">
             
             <li class="tour-item">
-                <span class="tour-date">31 ottobre 2026</span>
-                <div class="tour-venue">Festival del verde</div>
-                <span class="tour-city">Parco di Aguzzano (RM)</span>
+                <span class="tour-date">Sabato 10 ott 2026 - 16:00</span>
+                <div class="tour-venue">Festival del Verde (Valle dell'Aniene, balli e canti)[cite: 1]</div>
+                <span class="tour-city">Parco di Aguzzano (RM)[cite: 1]</span>
             </li>
             <li class="tour-item">
                 <span class="tour-date">12 dicembre 2026</span>
@@ -402,6 +452,7 @@
                 <span class="tour-date">Prossimamente</span>
                 <div class="tour-venue">Nuove date in fase di definizione</div>
                 <span class="tour-city">--</span>
+            </li>
         </ul>
     </section>
 
