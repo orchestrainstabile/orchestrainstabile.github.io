@@ -481,17 +481,15 @@
             Visite al sito: <span id="visit-count" style="color: #f39c12;">...</span>
         </p>
     </footer>
-
-    <!-- Script per il contatore di visite -->
+<!-- Script definitivo e stabile per il contatore di visite -->
     <script>
-        fetch('https://api.counterapi.dev/v1/orchestrainstabile/visite/up')
+        fetch('https://api.countapi.xyz/hit/orchestrainstabile.github.io/visite')
             .then(response => response.json())
             .then(data => {
-                // Controlla se la risposta contiene il valore in modo sicuro
-                const count = data.count !== undefined ? data.count : (data.value !== undefined ? data.value : '1');
-                document.getElementById('visit-count').innerText = count;
+                document.getElementById('visit-count').innerText = data.value;
             })
             .catch(error => {
+                // Fallback nel caso l'API fosse momentaneamente irraggiungibile
                 document.getElementById('visit-count').innerText = "1";
             });
     </script>
